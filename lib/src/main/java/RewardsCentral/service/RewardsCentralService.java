@@ -17,6 +17,16 @@ public class RewardsCentralService {
 	private final static Pattern UUID_REGEX_PATTERN = Pattern
 			.compile("^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$");
 
+	/**
+	 * GET the reward points
+	 * 
+	 * @param attractionId : the attractionId String in UUID form of the attraction
+	 *                     we want to get its reward points
+	 * @param userId       : the userId String in UUID form of the user we want to
+	 *                     get his reward points
+	 * @return int : reward points
+	 * @throws UUIDException
+	 */
 	public int getRewardPointsRewardsCentral(String attractionId, String userId) throws UUIDException {
 		logger.info("get Reward Points RewardsCentral");
 
