@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import RewardsCentral.exception.UUIDException;
 import RewardsCentral.service.RewardsCentralService;
 
 @RestController
@@ -19,7 +20,7 @@ public class RewardsCentralController {
 	private RewardsCentralService rewardsCentralService;
 	
 	@RequestMapping("/getRewardPoints")
-	public int getRewardPointsRewardsCentral(@RequestParam UUID attractionId,@RequestParam UUID userId) {
+	public int getRewardPointsRewardsCentral(@RequestParam String attractionId,@RequestParam String userId) throws UUIDException {
 		logger.info("Get RewardPointsServer for attractionId : " + attractionId +" and userId : " + userId );
 		return rewardsCentralService.getRewardPointsRewardsCentral(attractionId, userId);
 		
